@@ -1,0 +1,59 @@
+print('''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.") 
+
+#https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
+
+
+
+choice1=input("You are at a road, there are two different pathways. Which one do you choose? Type left or right.\n").lower()
+
+if choice1 == "left":
+    choice2=input("You come to a wooden dock what do you do? Wait for a boat or swim? Type boat or swim.\n").lower()
+    if choice2== "boat":
+      choice3= input("You waited for a boat and the locals imprisoned you what do you do? Type escape or join them.\n").lower()
+      if choice3=="join them":
+       choice4=input("You joined the locals and all of you decided to search for the treasure. During the quest you saw a lion. What do you do? Type fight or run.\n").lower()
+       if choice4=="run":
+           choice5=input("While running, you saw a chest hidden in the woods.What do you do? Type open or ignore\n").lower()
+
+           if choice5=="open":
+            print("You opened the treasure chest and found the treasure. Congratulations you succesfully completed the game!!")
+           else:
+            print("You missed the opportunity of your life. While running you encountererd a viper and  got poisoned. Game Over. ") 
+       else:
+          print("The lion murdered all of you!")    
+           
+           
+      else:
+        print("You tried to escape and the locals killed you.")
+             
+       
+      
+    else:
+     print("A crocodile approached and devoured you. Game Over") 
+    
+
+else:
+    print("You fell into al hole and died. Game Over.")
