@@ -1,8 +1,8 @@
 from replit import clear
-from art import logo
+
 
 is_another_one = True
-print(logo)
+
 print("Welcome to the secret auction program.")
 dict = {}
 
