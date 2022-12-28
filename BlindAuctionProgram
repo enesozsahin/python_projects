@@ -34,3 +34,4 @@ while is_another_one == True:
         is_another_one = False
         if is_another_one == False:
             find_highest_bidder(bidding_record=dict)
+            
