@@ -1,0 +1,55 @@
+from art import logo #this part is optional 
+
+from game_data import data #This code is written as an example. You must have a database to make this game 
+from replit import clear #This function is from replit its mission is just to clear the terminal(the part where player sees)
+import random
+score=0
+def checker():
+
+  if first_follower > sec_follower:
+    return guess=="a"
+  else:
+    return guess=="b"
+
+    
+print(logo) #this part is optional 
+
+game_cont= True
+
+Chosen2=random.choice(data)
+
+while game_cont:
+  
+  Chosen1=Chosen2
+  print("Compare A: "+ Chosen1["name"] + ", " +  Chosen1['description']+", "+ Chosen1['country'])
+  print(vs)
+
+  
+  Chosen2=random.choice(data)
+  
+  while Chosen2== Chosen1:
+    Chosen2= random.choice(data)
+  
+  print("Against B: "+ Chosen2["name"]+ ", "+Chosen2["description"]+ ", "+
+       Chosen2["country"])
+  
+  
+  first_follower= Chosen1["follower_count"]
+  sec_follower= Chosen2["follower_count"]
+  
+    
+  guess=input("Who has more followers? Type 'A' or 'B': ").lower()
+  
+  is_correct= checker()
+
+  clear()
+  print(logo)
+  
+  if is_correct:
+    score+=1
+    print(f"Correct! Your current score: {score}")
+  else:
+    game_cont==False
+    print(f"Wrong! Your final score: {score}")
+
+    
