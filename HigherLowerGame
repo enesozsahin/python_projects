@@ -1,8 +1,10 @@
 from art import logo #this part is optional 
 
-from game_data import data #This code is written as an example. You must have a database to make this game 
-from replit import clear #This function is from replit its mission is just to clear the terminal(the part where player sees)
+from game_data import data   #This code is written as an example. You must have a database to make this game 
+from replit import clear     #This function is from replit and its mission is just to clear the terminal(the part where player sees)
 import random
+
+# the 'name', 'description' , 'country' and 'follower_count' strings are from  a dictionary inside a list.(database)
 score=0
 def checker():
 
@@ -16,13 +18,13 @@ print(logo) #this part is optional
 
 game_cont= True
 
-Chosen2=random.choice(data)
+Chosen2=random.choice(data) #data is the database that I have mentioned above.#Technically this line of code chooses a dictionary from a list randomly.
 
 while game_cont:
   
   Chosen1=Chosen2
   print("Compare A: "+ Chosen1["name"] + ", " +  Chosen1['description']+", "+ Chosen1['country'])
-  print(vs)
+  
 
   
   Chosen2=random.choice(data)
