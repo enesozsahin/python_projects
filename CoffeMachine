@@ -1,0 +1,115 @@
+MENU = {
+    "espresso": {
+        "ingredients": {
+            "water": 50,
+            "coffee": 18,
+            "milk": 0
+        },
+        "cost": 1.5,
+    },
+    "latte": {
+        "ingredients": {
+            "water": 200,
+            "milk": 150,
+            "coffee": 24,
+        },
+        "cost": 2.5,
+    },
+    "cappuccino": {
+        "ingredients": {
+            "water": 250,
+            "milk": 100,
+            "coffee": 24,
+        },
+        "cost": 3.0,
+    }
+}
+
+resources = {
+    "water": 300,
+    "milk": 200,
+    "coffee": 100,
+}
+
+
+def total():
+    print("Please insert coins.")
+    quarter = 0.25 * int(input("how many quarters?"))
+    dime = 0.1 * int(input("how many dimes?"))
+    nickel = 0.05 * int(input("how many nickels?"))
+    pennie = 0.01 * int(input("how many pennies?"))
+    money = quarter + dime + nickel + pennie
+    return money
+
+
+def change():
+    result = 0
+    if user_money >= user_choice["cost"]:
+        result = user_money - user_choice["cost"]
+        result1= round(result, 3)
+        return f"Returned {result1}$ in change\n" \
+                f"Here is your {user} ☕"
+    else:
+        return "Insufficient money, money is refunded."
+
+
+
+
+
+money_in_machine=0
+iscont= True
+while iscont:
+
+
+    user=input("What would you like? (espresso/latte/cappuccino):").lower()
+
+
+    if user == "off".lower():
+        quit()
+    elif user=="report".lower():
+        print(f"Water: {resources['water']}")
+        print(f"Milk: {resources['milk']}")
+        print(f"Coffee: {resources['coffee']}")
+        print(f"Money: {money_in_machine}$")
+        user = input("What would you like? (espresso/latte/cappuccino):").lower()
+        user_choice = MENU[user]
+    else:
+        user_choice=MENU[user]
+
+    ingredients1 = user_choice["ingredients"]
+
+
+    def resourcesx():
+        # for a in resources:
+        #   if
+        if resources["water"] >= ingredients1["water"] and resources["milk"] >= ingredients1["milk"] and resources["coffee"] >= ingredients1["coffee"]:
+            water_left = resources["water"] - ingredients1["water"]
+            resources["water"] = water_left
+            milk_left = resources["milk"] - ingredients1["milk"]
+            resources["milk"] = milk_left
+            coffee_left = resources["coffee"] - ingredients1["coffee"]
+            resources["coffee"] = coffee_left
+        else:
+            print("Not enough ingredients.")
+            quit()
+            # return f"Water: {water_left}\n" \
+            #        f"Milk: {milk_left}\n" \
+            #        f"Coffee: {coffee_left}\n"
+
+
+    resourcesx()
+
+
+
+    money_in_machine += user_choice["cost"]
+    user_money=total()
+
+
+
+
+
+
+
+
+    print(f"Money inserted:{user_money}$")
+    print(change())
