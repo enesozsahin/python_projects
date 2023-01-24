@@ -1,0 +1,14 @@
+The provided code is a Tkinter-based GUI application that appears to be a simple budget tracking application. The GUI.py script contains the graphical user interface that allows users to input their name, last name, income, expense amount, and set a budget goal. The data entered by the user is then passed to the budget_functions.py script where it is processed and stored in a SQLite database.
+
+When the user clicks the "click Me" button, the selected category from the drop-down menu is displayed on the screen. When the user clicks the "Add Operation" button, the input data is passed to the budget_functions.py file where it is inserted into a database using the insert(name, lastname, income, expense_for, expense, budget_goal) function. The data is then retrieved from the database using the getdata(name, lastname) function, and a pie chart is created using matplotlib library which shows the expenses grouped by category. The data is then printed to the console.
+
+The budget_functions.py script contains several functions that interact with a SQLite database to store, retrieve and create data for a budget tracking application. The functions are:
+
+*insert(name, lastname, income, expense_for, expense, budget_goal): This function takes in the user input data (name, last name, income, expense category, expense amount, and budget goal) and writes it to a database called "PersonalBudgetingApp.db" using an sqlite3 connection.
+
+*getdata(name, lastname): This function takes in the user's name and last name as input, and retrieves data from the database for the given name and last name and returns the data.
+
+*createdatabase(): This function creates a table called "PERSONAL" in the database, if the table does not already exist.
+
+*open_error_win(): This function shows a messagebox with an error message "Please enter a valid value" when called.
+ Overall, the provided code is a functional budget tracking application that allows users to input their financial data, stores it in a SQLite database, and visualizes the data with a pie chart.
