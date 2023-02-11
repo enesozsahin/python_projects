@@ -1,0 +1,10 @@
+File creation:
+The code first creates a file named "orders.txt" and writes four lines of order data to the file. The order data is written in the format of Order Number, Customer Name, Item:Quantity. The data is written using the write method of the file object, which is opened in write mode ("w") using the with statement.
+
+File processing:
+The code then opens the "orders.txt" file in read mode ("r") and processes each line of the file. For each line, the data is extracted by splitting the line into parts separated by commas. The first part is the order number, which is converted to an integer and stored in the order_number variable. The second part is the customer name, which is stored in the customer_name variable. The rest of the parts are the items, which are processed to create a dictionary called items. The items are split into name and quantity using colons, and the name is used as the key and the quantity as the value in the dictionary.
+
+Order dictionary creation:
+Finally, the code creates a dictionary called order that holds the extracted information for each order. The keys of the dictionary are "Order Number", "Customer", and "Items", with the values being the values of the order_number, customer_name, and items variables, respectively.
+
+Overall, the code provides a basic example of how to process data stored in a text file and create a dictionary to hold the processed information.
