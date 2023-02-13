@@ -41,11 +41,7 @@ while iscont:
         iscont = False
         scoreboard.game_over()
 
-    # [1:] is called slicing eger [1:3:1] dersen şu olur ikinci elemandan başla (çünkü bu baştaki numaraları listedeki
-    # elemanların arasındaymış gibi düşün ve solundaki o numara gibi) dördüncüye elemana kadar git ama 2. elemanı atla
-    # misal [::2] dersek listenin başından sonuna kadar git ve hepsini sınıflandır
-    # ve 3. elemanları (yani aslında burada 3 ün katı olanlar oluyor) sayma, atla.
-    # eger ayrıca [::-1] yaparsan da listeyi ya da tuple ı direkt ters çevirir.
+    
     for segment in snake.segs[1:]:
 
         if snake.head.distance(segment) < 10:
