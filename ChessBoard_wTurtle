@@ -1,0 +1,56 @@
+import turtle
+
+enes = turtle.Turtle()
+enes.shape("turtle")
+enes.speed(100)
+win = turtle.Screen()
+turtle.screensize(640, 640)
+x_cor = win.window_width() / 2
+y_cor = win.window_height() / 2
+
+enes.penup()
+enes.goto(-x_cor, y_cor)
+
+def draw_square(color, side=80):
+    enes.fillcolor(color)
+    enes.begin_fill()
+    for _ in range(4):
+        enes.pendown()
+        enes.fd(side)
+        enes.right(90)
+    enes.end_fill()
+
+
+def draw_board(x_cor, y_cor,count):
+
+    #Make the tiles go from black to white
+
+        if(count%2!=0):
+            for a in range(4):
+                draw_square("black")
+                enes.fd(80)
+                draw_square("white")
+                enes.fd(80)
+
+
+        elif(count%2==0):
+            for a in range(4):
+                draw_square("white")
+                enes.fd(80)
+                draw_square("black")
+                enes.fd(80)
+
+        enes.penup()
+        y_cor -= 80
+        enes.goto(-x_cor, y_cor)
+        return y_cor
+
+def draw_whole_chess_board():
+    new_y_cor = y_cor
+    for a in range(8):
+        new_y_cor = draw_board(x_cor, new_y_cor,a+1)
+
+
+draw_whole_chess_board()
+enes.hideturtle()
+win.mainloop()
